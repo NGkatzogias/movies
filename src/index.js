@@ -16,7 +16,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Layout />}>
+      <Route path="/movies" element={<Layout />}>
         <Route index element={<Recent />} />
         <Route path="SearchResults" element={<SearchResults />} />
         <Route path="SingleMovie" element={<SingleMovie />} > 
