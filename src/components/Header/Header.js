@@ -23,7 +23,7 @@ export default function Header({setPageNumber, searchText, setSearchText}) {
     setSearchText(lowerCase);
     setPageNumber(1);
     if (searchText !== ""){
-      navigate('/SearchResults')
+      navigate('SearchResults')
     }
   }
 

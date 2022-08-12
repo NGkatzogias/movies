@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {
-  BrowserRouter,
+  HashRouter,
   Routes,
   Route,
 } from "react-router-dom";
@@ -14,9 +14,9 @@ import SingleMovie from './components/Movies/SingleMovie';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
+  <HashRouter>
     <Routes>
-      <Route path="/movies" element={<Layout />}>
+      <Route path="/" element={<Layout />}>
         <Route index element={<Recent />} />
         <Route path="SearchResults" element={<SearchResults />} />
         <Route path="SingleMovie" element={<SingleMovie />} > 
@@ -24,5 +24,5 @@ root.render(
         </Route>
       </Route>
     </Routes>
-  </BrowserRouter>
+  </HashRouter>
 );
