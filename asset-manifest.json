@@ -1,14 +1,15 @@
 {
   "files": {
-    "main.css": "/movies/static/css/main.34d3630e.css",
-    "main.js": "/movies/static/js/main.fc5fd8b2.js",
+    "main.css": "/movies/static/css/main.17206a6b.css",
+    "main.js": "/movies/static/js/main.8e040613.js",
     "static/media/no-image.jpg": "/movies/static/media/no-image.bea60d3de3ff3c7a20a2.jpg",
+    "static/media/tmdb-logo.svg": "/movies/static/media/tmdb-logo.caee745762db3e030d38ebb5a167ae05.svg",
     "index.html": "/movies/index.html",
-    "main.34d3630e.css.map": "/movies/static/css/main.34d3630e.css.map",
-    "main.fc5fd8b2.js.map": "/movies/static/js/main.fc5fd8b2.js.map"
+    "main.17206a6b.css.map": "/movies/static/css/main.17206a6b.css.map",
+    "main.8e040613.js.map": "/movies/static/js/main.8e040613.js.map"
   },
   "entrypoints": [
-    "static/css/main.34d3630e.css",
-    "static/js/main.fc5fd8b2.js"
+    "static/css/main.17206a6b.css",
+    "static/js/main.8e040613.js"
   ]
 }
