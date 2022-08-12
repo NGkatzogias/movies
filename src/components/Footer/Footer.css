@@ -1,8 +1,20 @@
 footer {
     background-color: #3a3535;
-    padding: 20px 0;
     margin-top: 30px;
     width: 100%;
     text-align: center;
     color: #f1f1f1
+}
+
+.tmdb {
+    padding: 10px 0;
+}
+
+.tmdb img{
+    width:200px;
+}
+
+footer .copyrights {
+    padding: 20px 0;
+    background-color: #302b2b;
 }
