@@ -191,6 +191,7 @@
 .review--user-comment{
     color: #fff;
     grid-column: 2 / 3;
+    overflow-x: hidden;
 }
 
 .movie-details--all-trailers{
