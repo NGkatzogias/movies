@@ -24,3 +24,22 @@ code {
   margin: auto;
   margin-block: 70px;
 }
+
+.back-to-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  color: #fff;
+  background-color: darkred;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: .3s ease-in-out;
+}
+
+.back-to-top:hover {
+  color: darkred;
+  background-color: #fff;
+}
