@@ -17,8 +17,7 @@ export default function SingleMovie() {
     const { reviews } = useGetMovieReviews(selectedMovieId)
     const imgPath = "https://image.tmdb.org/t/p/w300";
     const poster = document.querySelector('.movie-details--image');
-
-
+    
     const showMoreVideos = () => {
         setShowAllTrailers(prevShowAllTrailers => !prevShowAllTrailers);
     }

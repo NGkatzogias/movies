@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 
 import Header from "./Header/Header";
 import "./Header/Header.css";
@@ -14,6 +14,21 @@ export default function Layout() {
   const [searchText, setSearchText] = useState("");
   const [selectedMovieId, setSelectedMovieId] = useState();
   const [showTopBtn, setShowTopBtn] = useState(false);
+
+  let navigate = useNavigate();
+
+  useEffect(() =>{
+    const data = window.localStorage.getItem('MY_SELECTED_MOVIE');
+    if (data !== null) {
+      setSelectedMovieId(JSON.parse(data));
+    }else{
+      navigate("/");
+    }
+  }, [])
+
+  useEffect(() => {
+    window.localStorage.setItem('MY_SELECTED_MOVIE', JSON.stringify(selectedMovieId));
+  }, [selectedMovieId])
 
   useEffect(() => {
     window.addEventListener("scroll", () => {

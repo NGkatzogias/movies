@@ -19,9 +19,7 @@ root.render(
       <Route path="/" element={<Layout />}>
         <Route index element={<Recent />} />
         <Route path="SearchResults" element={<SearchResults />} />
-        <Route path="SingleMovie" element={<SingleMovie />} > 
-          <Route path=":movieId" element={<SingleMovie />}/>
-        </Route>
+        <Route path="SingleMovie/:id" element={<SingleMovie />} /> 
       </Route>
     </Routes>
   </HashRouter>
