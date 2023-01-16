@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
 import axios from "axios";
+import { useEffect, useState } from "react";
 
-export default function useMovieSearch(searchText, pageNumber) {
+function useGetMoviesByGenre(genreID, pageNumber) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [movies, setMovies] = useState([]);
@@ -9,7 +9,7 @@ export default function useMovieSearch(searchText, pageNumber) {
 
   useEffect(() => {
     setMovies([]);
-  }, [searchText]);
+  }, [genreID]);
 
   useEffect(() => {
     setLoading(true);
@@ -17,8 +17,8 @@ export default function useMovieSearch(searchText, pageNumber) {
     let cancel;
     axios({
       method: "GET",
-      url: "https://api.themoviedb.org/3/search/movie?api_key=dbcafb737de5a05b646685f222cf8caa",
-      params: { query: searchText, page: pageNumber },
+      url: "https://api.themoviedb.org/3/discover/movie?api_key=dbcafb737de5a05b646685f222cf8caa",
+      params: { with_genres: genreID, page: pageNumber },
       cancelToken: new axios.CancelToken((c) => (cancel = c)),
     })
       .then((res) => {
@@ -33,6 +33,8 @@ export default function useMovieSearch(searchText, pageNumber) {
         setError(true);
       });
     return () => cancel();
-  }, [searchText, pageNumber]);
+  }, [genreID, pageNumber]);
   return { loading, error, movies, hasMore };
 }
+
+export default useGetMoviesByGenre;

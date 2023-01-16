@@ -1,17 +1,21 @@
-import { useRef, useCallback, useState } from "react";
-import { Link } from "react-router-dom";
-import useMoviesRecent from "../../hooks/useMoviesRecent";
-import "./Movies.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faX, faSliders } from "@fortawesome/free-solid-svg-icons";
-import noImg from "../../images/no-image.jpg";
+import { useCallback, useRef, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import useGetGenreList from "../../hooks/useGetGenreList";
+import useGetMoviesByGenre from "../../hooks/useGetMoviesByGenre";
+import noImg from "../../images/no-image.jpg";
 
-export default function Recent({ pageNumber, setPageNumber }) {
+function MoviesByGenre({ pageNumber, setPageNumber }) {
   const [showGenres, setShowGenres] = useState(false);
-  const { movies, hasMore, loading, error } = useMoviesRecent(pageNumber);
+  const { id } = useParams();
+  console.log(id);
+  const { movies, hasMore, loading, error } = useGetMoviesByGenre(
+    id,
+    pageNumber
+  );
+  console.log(pageNumber);
   const { genres } = useGetGenreList();
-  console.log(genres);
   const imgPath = "https://image.tmdb.org/t/p/w300";
   const observer = useRef();
   const lastMovieElementRef = useCallback(
@@ -85,7 +89,10 @@ export default function Recent({ pageNumber, setPageNumber }) {
   const allGenres = genres.map((genre) => {
     return (
       <li key={genre.id}>
-        <Link onClick={() => setPageNumber(1)} to={`MoviesByGenre/${genre.id}`}>
+        <Link
+          onClick={() => setPageNumber(1)}
+          to={`/MoviesByGenre/${genre.id}`}
+        >
           {genre.name}
         </Link>
       </li>
@@ -119,3 +126,5 @@ export default function Recent({ pageNumber, setPageNumber }) {
     </>
   );
 }
+
+export default MoviesByGenre;

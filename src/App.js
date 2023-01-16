@@ -7,6 +7,7 @@ import SearchResults from "./components/Movies/SearchResults";
 import SingleMovie from "./components/Movies/SingleMovie";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
+import MoviesByGenre from "./components/Movies/MoviesByGenre";
 
 function App() {
   const [pageNumber, setPageNumber] = useState(1);
@@ -57,6 +58,15 @@ function App() {
             }
           />
           <Route path="SingleMovie/:id" element={<SingleMovie />} />
+          <Route
+            path="MoviesByGenre/:id"
+            element={
+              <MoviesByGenre
+                pageNumber={pageNumber}
+                setPageNumber={setPageNumber}
+              />
+            }
+          />
         </Routes>
       </div>
       <Footer />

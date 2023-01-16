@@ -26,6 +26,12 @@ header {
     border-radius: 50%;
     color: #fff;
     font-size: 1rem;
+    cursor: pointer;
+}
+
+.search:hover {
+    color: darkred;
+    background-color: #fff;
 }
 
 .search--wrap{
